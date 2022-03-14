@@ -5,8 +5,8 @@ export default class Home extends Component {
 
     render(){
         return(
-            <div className="page">
-                <p>Soon to be Task Manager Application</p>
+            <div >
+                <h1>Soon to be Task Manager Application</h1>
             </div>
         )
     }
