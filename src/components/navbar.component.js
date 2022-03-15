@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import "./navbar.css";
-
-
-export default class Navbar extends Component {
-
+import React from 'react';
+import './navbar.css';
+import { NavLink } from 'react-router-dom';
+ class NavBar extends React.Component{
     render() {
         return (
-          <nav className="navbar">
-            <Link to="/" className="navbar-brand">Task Manager</Link>
-            <ul className="navbar-nav">
-                <li className="navbar-item">
-                    <Link to="/" className="nav-link">Home</Link>
-                </li>
-            </ul>
-          </nav>  
+            
+            <div>
+              <ul id="navbar">
+                <NavLink className = "link" activeClassName="selected" to="/Home">Tasks</NavLink>
+                <NavLink className = "link" activeClassName="selected" to="/NewTask">Add New Task</NavLink>
+                <NavLink className = "link" activeClassName="selected" to="/Calender">Calender</NavLink>
+                
+              </ul>
+            </div>
+            
         );
     }
-
 }
+
+export default NavBar;
