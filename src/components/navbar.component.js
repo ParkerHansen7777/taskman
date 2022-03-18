@@ -8,8 +8,9 @@ import { NavLink } from 'react-router-dom';
             <div>
               <ul id="navbar">
                 <NavLink className = "link" activeClassName="selected" to="/Home">Tasks</NavLink>
+				<NavLink className = "link" activeClassName="selected" to="/NewUser">Add New User</NavLink>
                 <NavLink className = "link" activeClassName="selected" to="/NewTask">Add New Task</NavLink>
-                <NavLink className = "link" activeClassName="selected" to="/Calender">Calender</NavLink>
+                <NavLink className = "link" activeClassName="selected" to="/Calendar">Calendar</NavLink>
                 
               </ul>
             </div>

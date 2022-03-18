@@ -3,8 +3,9 @@ import './App.css';
 import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './components/navbar.component';
 import Home from './components/home.component';
+import CreateUsers from './components/create-user.component';
 import NewTask from './components/new-task.component';
-import Calender from './components/calender.component';
+import Calendar from './components/calendar.component';
 function App() {
   return (
     
@@ -15,11 +16,14 @@ function App() {
         <Route path ="/Home">
           <Home />
         </Route>
+		<Route path ="/NewUser">
+          <CreateUsers />
+        </Route>
         <Route path ="/NewTask">
           <NewTask />
         </Route>
-        <Route path ="/Calender">
-          <Calender />
+        <Route path ="/Calendar">
+          <Calendar />
         </Route>
       </Switch>
   </BrowserRouter> 
