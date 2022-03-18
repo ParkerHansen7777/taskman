@@ -5,33 +5,43 @@ export default class NewTask extends Component {
 constructor(props) {
         super(props);
 
-        this.onChangeUsername = this.onChangeUsername.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onChangeName = this.onChangeName.bind(this);
+        this.onChangeDesc = this.onChangeDesc.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            username: '',
+            name: '',
+			description: '',
         }
     }
 
-    onChangeUsername(e) {
+    onChangeName(e) {
         this.setState({
-            username: e.target.value
+            name: e.target.value
+        });
+    }
+	
+	onChangeDesc(e) {
+        this.setState({
+            description: e.target.value
         });
     }
 
     onSubmit(e) {
         e.preventDefault();
 
-        const user = {
-            username: this.state.username,
+        const task = {
+            name: this.state.name,
+			description: this.state.description,
         }
 
-        console.log(user);
+        console.log(task);
 
-        axios.post('http://localhost:5000/users/add', user)
+        axios.post('http://localhost:5000/tasks/add', task)
             .then(res => console.log(res.data));
         this.setState({
-            username: ''
+            name: '',
+			description: ''
         })
             
     }
@@ -46,8 +56,8 @@ constructor(props) {
                         <input type="text"
                             required
                             className="form-control"
-                            value={this.state.username}
-                            onChange={this.onChangeUsername}
+                            value={this.state.name}
+                            onChange={this.onChangeName}
                             />
                     </div>
 					<div className="form-group">
@@ -55,8 +65,8 @@ constructor(props) {
                         <input type="text"
                             required
                             className="form-control"
-                            value={this.state.username}
-                            onChange={this.onChangeUsername}
+                            value={this.state.description}
+                            onChange={this.onChangeDesc}
                             />
                     </div>
                     <div className="form-group">
