@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './components/navbar.component';
-import Home from './components/home.component';
 import CreateUsers from './components/create-user.component';
 import NewTask from './components/new-task.component';
 import Calendar from './components/calendar.component';
 import TasksList from './components/tasks-list.component';
+import EditTasks from './components/edit-tasks.component'
 function App() {
   return (
     
@@ -25,6 +25,9 @@ function App() {
         </Route>
         <Route path ="/Calendar">
           <Calendar />
+        </Route>
+		<Route path ="/edit/:id">
+		{<EditTasks />}
         </Route>
       </Switch>
   </BrowserRouter> 

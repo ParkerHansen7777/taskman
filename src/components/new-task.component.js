@@ -39,10 +39,8 @@ constructor(props) {
 
         axios.post('http://localhost:5000/tasks/add', task)
             .then(res => console.log(res.data));
-        this.setState({
-            name: '',
-			description: ''
-        })
+       
+	   //window.location = '/';
             
     }
     
