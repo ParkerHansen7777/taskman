@@ -56,6 +56,7 @@ export default class TasksList extends Component {
                         <tr>
                             <th>Name</th>
                             <th>Description</th>
+							<th>Actions</th>
                         </tr>
                     </thead>
                     <tbody className="tbody">
