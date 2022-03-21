@@ -3,10 +3,31 @@
     padding: .5em;
 	background-color: lavender;
 }
+.table{
+    
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+	border: 2px solid black;
+}
 
+.thead{
+
+    background-color: rgb(160, 160, 160);
+	
+}
+
+.tbody {
+
+    border: 2px solid black;
+
+}
 .form-group{
     padding: .5em;
     display: block;
     position: relative;
     
 }
+
+
+

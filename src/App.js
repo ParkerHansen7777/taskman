@@ -6,6 +6,7 @@ import Home from './components/home.component';
 import CreateUsers from './components/create-user.component';
 import NewTask from './components/new-task.component';
 import Calendar from './components/calendar.component';
+import TasksList from './components/tasks-list.component';
 function App() {
   return (
     
@@ -14,7 +15,7 @@ function App() {
     <NavBar />
       <Switch>
         <Route path ="/Home">
-          <Home />
+         <TasksList />
         </Route>
 		<Route path ="/NewUser">
           <CreateUsers />
