@@ -17,7 +17,7 @@ function App() {
         <Route path ="/Home">
          <TasksList />
         </Route>
-		<Route path ="/NewUser">
+		    <Route path ="/NewUser">
           <CreateUsers />
         </Route>
         <Route path ="/NewTask">
@@ -26,10 +26,8 @@ function App() {
         <Route path ="/Calendar">
           <Calendar />
         </Route>
-		<Route path ="/edit/:id">
-		{<EditTasks />}
-        </Route>
-      </Switch>
+		<Route path ='/edit/:id' component={EditTasks}/>
+		</Switch>
   </BrowserRouter> 
   );
 }

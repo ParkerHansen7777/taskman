@@ -60,7 +60,7 @@ export default class EditTasks extends Component {
         
     
 
-        //window.location = '/';
+        window.location = '/';
     }
 
 
