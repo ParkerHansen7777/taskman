@@ -7,6 +7,7 @@ const Task = props => (
     <tr>
         <td>{props.task.name}</td>
         <td>{props.task.description}</td>
+        <td>{props.task.status}</td>
         <td>
         <Link to={"/edit/"+props.task._id}>edit</Link> | <a href="#" onClick={() => { props.deleteTask(props.task._id) }}>delete</a>
         </td>  
@@ -56,6 +57,7 @@ export default class TasksList extends Component {
                         <tr>
                             <th>Name</th>
                             <th>Description</th>
+                            <th>Status</th>
 							<th>Actions</th>
                         </tr>
                     </thead>

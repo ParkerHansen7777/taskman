@@ -7,11 +7,13 @@ export default class EditTasks extends Component {
 
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeDesc = this.onChangeDesc.bind(this);
-		this.onSubmit = this.onSubmit.bind(this);
+		this.onChangeStatus = this.onChangeStatus.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             name: '',
-            description: ''
+            description: '',
+            status: ''
         }
     }
     
@@ -21,6 +23,7 @@ export default class EditTasks extends Component {
             this.setState({
               name: response.data.name,
               description: response.data.description,
+              status: response.data.status,
             })   
           })
           .catch(function (error) {
@@ -42,6 +45,12 @@ export default class EditTasks extends Component {
            description: e.target.value
         });
     }
+
+    onChangeStatus(e) {
+        this.setState({
+            status: e.target.value
+        });
+    }
     
 
     onSubmit(e) {
@@ -50,6 +59,7 @@ export default class EditTasks extends Component {
         const task = {
             name: this.state.name,
             description: this.state.description,
+            status: this.state.status,
             
         }
 
@@ -85,6 +95,15 @@ export default class EditTasks extends Component {
                         className="form-control"
                         value={this.state.description}
                         onChange={this.onChangeDesc}
+                        />
+                </div>
+                <div className="form-group">
+                    <label>Status: </label>
+                    <input type="text"
+                        required
+                        className="form-control"
+                        value={this.state.status}
+                        onChange={this.onChangeStatus}
                         />
                 </div>
                 <div className="form-group">

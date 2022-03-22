@@ -7,11 +7,13 @@ constructor(props) {
 
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeDesc = this.onChangeDesc.bind(this);
-		this.onSubmit = this.onSubmit.bind(this);
+		this.onChangeStatus = this.onChangeStatus.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             name: '',
 			description: '',
+            status: '',
         }
     }
 
@@ -27,12 +29,19 @@ constructor(props) {
         });
     }
 
+    onChangeStatus(e) {
+        this.setState({
+            status: e.target.value
+        });
+    }
+
     onSubmit(e) {
         e.preventDefault();
 
         const task = {
             name: this.state.name,
 			description: this.state.description,
+            status: this.state.status,
         }
 
         console.log(task);
@@ -40,7 +49,7 @@ constructor(props) {
         axios.post('http://localhost:5000/tasks/add', task)
             .then(res => console.log(res.data));
        
-	   //window.location = '/';
+	   window.location = '/';
             
     }
     
@@ -65,6 +74,15 @@ constructor(props) {
                             className="form-control"
                             value={this.state.description}
                             onChange={this.onChangeDesc}
+                            />
+                    </div>
+                    <div className="form-group">
+                        <label>Task Status: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.status}
+                            onChange={this.onChangeStatus}
                             />
                     </div>
                     <div className="form-group">

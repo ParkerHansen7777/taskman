@@ -17,6 +17,13 @@ const taskSchema = new Schema({
         trim: true,
         minlength: 3
     },
+    status: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength: 3
+    },
 }, {
     timestamps: true,
 });

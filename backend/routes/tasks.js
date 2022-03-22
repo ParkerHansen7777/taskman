@@ -10,10 +10,12 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const name = req.body.name;
 	const description = req.body.description;
+    const status = req.body.status;
 
     const newTask = new Task({
 		name, 
-		description
+		description,
+        status
 	});
     
     newTask.save()
@@ -39,6 +41,7 @@ router.route('/update/:id').post((req, res) => {
         .then(task => {
             task.name = req.body.name;
             task.description = req.body.description;
+            task.status = req.body.status;
             
             task.save()
                 .then(() => res.json('Task updated!'))
