@@ -43,16 +43,30 @@ export default class TasksList extends Component {
         })
     }   
     
-    taskList() {
-        return this.state.tasks.map(currenttask => {
-            return <Task task={currenttask} deleteTask={this.deleteTask} key={currenttask._id}/>;
+    taskList1() {
+        return this.state.tasks.map(currenttask => { if(currenttask.status === 'To-Do'){
+            return <Task task={currenttask} deleteTask={this.deleteTask} key={currenttask._id}/>; }
         })
     }
+
+    taskList2() {
+        return this.state.tasks.map(currenttask => { if(currenttask.status === 'Doing'){
+            return <Task task={currenttask} deleteTask={this.deleteTask} key={currenttask._id}/>; }
+        })
+    }
+
+    taskList3() {
+        return this.state.tasks.map(currenttask => { if(currenttask.status === 'Done'){
+            return <Task task={currenttask} deleteTask={this.deleteTask} key={currenttask._id}/>; }
+        })
+    }
+    
     render(){
         return(
             <div className="page">
-                <h3>Tasks</h3>
+                <h1>Tasks</h1>
                 <table className="table">
+                   <div className="heading"><h3>To-Do</h3></div>
                     <thead className="thead">
                         <tr>
                             <th>Name</th>
@@ -62,7 +76,35 @@ export default class TasksList extends Component {
                         </tr>
                     </thead>
                     <tbody className="tbody">
-                        { this.taskList() }
+                        { this.taskList1() }
+                    </tbody>
+                </table>
+                <table className="table">
+                <div className="heading"><h3>Doing</h3></div>
+                    <thead className="thead">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+							<th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody className="tbody">
+                        { this.taskList2() }
+                    </tbody>
+                </table>
+                <table className="table">
+                <div className="heading"><h3>Done</h3></div>
+                    <thead className="thead">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+							<th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody className="tbody">
+                        { this.taskList3() }
                     </tbody>
                 </table>
             </div>

@@ -99,12 +99,15 @@ export default class EditTasks extends Component {
                 </div>
                 <div className="form-group">
                     <label>Status: </label>
-                    <input type="text"
+                    <select ref="userInput"
                         required
                         className="form-control"
                         value={this.state.status}
-                        onChange={this.onChangeStatus}
-                        />
+                        onChange={this.onChangeStatus}>
+                        <option>To-Do</option>
+                        <option>Doing</option>
+                        <option>Done</option>
+                    </select>
                 </div>
                 <div className="form-group">
                     <input type="submit" value="Edit Task" className="btn btn-primary" />
