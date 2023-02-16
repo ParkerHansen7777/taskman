@@ -83,6 +83,7 @@ constructor(props) {
                             className="form-control"
                             value={this.state.status}
                             onChange={this.onChangeStatus}>
+                            <option></option>
                             <option>To-Do</option>
                             <option>Doing</option>
                             <option>Done</option>
