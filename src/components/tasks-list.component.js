@@ -63,50 +63,56 @@ export default class TasksList extends Component {
     
     render(){
         return(
-            <div className="page">
-                <h1>Tasks</h1>
-                <table className="table">
-                   <div className="heading"><h3>To-Do</h3></div>
-                    <thead className="thead">
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Status</th>
-							<th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="tbody">
-                        { this.taskList1() }
-                    </tbody>
-                </table>
-                <table className="table">
-                <div className="heading"><h3>Doing</h3></div>
-                    <thead className="thead">
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Status</th>
-							<th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="tbody">
-                        { this.taskList2() }
-                    </tbody>
-                </table>
-                <table className="table">
-                <div className="heading"><h3>Done</h3></div>
-                    <thead className="thead">
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Status</th>
-							<th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="tbody">
-                        { this.taskList3() }
-                    </tbody>
-                </table>
+            <div className="Page">
+                <header className="Page-header"><h1>Tasks</h1></header>
+                <body className="Page-body">
+                <div className="heading"><h3>To-Do</h3></div>
+                    <table className="table">
+                        <thead className="thead">
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody className="tbody">
+                            { this.taskList1() }
+                        </tbody>
+                    </table>
+                    <div className="heading"><h3>Doing</h3></div>
+                    <table className="table">
+                        <thead className="thead">
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody className="tbody">
+                            { this.taskList2() }
+                        </tbody>
+                    </table>
+                    <div className="heading"><h3>Done</h3></div>
+                    <table className="table">
+                        <thead className="thead">
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody className="tbody">
+                            { this.taskList3() }
+                        </tbody>
+                    </table>
+                    <p1>Hello this is a test!
+                        I should be under these tables!
+                    </p1>
+                </body>
+                <footer className="Page-footer"><span>Created by Me (© 2023)</span></footer>
             </div>
         )
     }

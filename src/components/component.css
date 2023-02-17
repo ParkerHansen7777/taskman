@@ -1,14 +1,23 @@
-.page{
+.Page{
 	margin:auto;
     padding: .5em;
-	background-color: lavender;
+	background-color: rgb(195, 195, 201);
+}
+
+.Page-header{
+
+}
+
+.Page-body{
+    background: rgb(195, 195, 201);
 }
 .table{
     
-    float: left;
-    display:block;
-    position: relative;
-    margin: 1em;
+    /*float: left;*/
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
     padding: 5px;
 	border: 2px solid black;
     background-color: lavender;
@@ -23,19 +32,33 @@
 .thead{
 
     background-color: rgb(160, 160, 160);
-	
+	position: relative;
+    text-align: center;
+    justify-content: center;
 }
 
 .tbody {
 
     border: 2px solid black;
-
+    position: relative;
+    text-align: center;
+    justify-content: center;
 }
 .form-group{
     padding: .5em;
     display: block;
     position: relative;
     
+}
+
+.Page-footer {
+	background: #DDE0E3;
+    padding: 15px 10px;
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+	width: 100%;
+	text-align: center;
 }
 
 
