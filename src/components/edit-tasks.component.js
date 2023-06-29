@@ -65,7 +65,7 @@ export default class EditTasks extends Component {
 
         console.log(task);
 
-        axios.post('http://localhost:5000/tasks/update/'+this.props.match.params.id, task)
+        axios.post('https://taskmanager-backend-1st0.onrender.com/tasks/update/'+this.props.match.params.id, task)
             .then(res => console.log(res.data));
         
     
