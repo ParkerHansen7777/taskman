@@ -9,8 +9,6 @@ import { NavLink } from 'react-router-dom';
               <ul id="navbar">
                 <NavLink className = "link" activeClassName="selected" to="/Home">Tasks</NavLink>
                 <NavLink className = "link" activeClassName="selected" to="/NewTask">Add New Task</NavLink>
-                
-                
               </ul>
             </div>
             
