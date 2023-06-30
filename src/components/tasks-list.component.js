@@ -25,7 +25,7 @@ export default class TasksList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/tasks/')
+        axios.get('https://taskmanager-backend-1st0.onrender.com/tasks/')
             .then(response => {
                 this.setState({ tasks: response.data })
             })
