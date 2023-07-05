@@ -62,19 +62,10 @@ export default class TasksList extends Component {
     }
     
     render(){
-        
-		let connected;
-        if(this.state.games.length < 1){
-           connected = <h1>Backend spinning up....please wait a few seconds until page populates</h1>;
-        }
-		
-		return(
+        return(
             <div className="Page">
                 <header className="Page-header"><h1>Tasks</h1></header>
-                <div>
-                {connected}
-                </div>
-				<body className="Page-body">
+                <body className="Page-body">
                 <div className="heading"><h3>To-Do</h3></div>
                     <table className="table">
                         <thead className="thead">
