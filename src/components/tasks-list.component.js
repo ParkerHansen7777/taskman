@@ -62,9 +62,20 @@ export default class TasksList extends Component {
     }
     
     render(){
+        
+        
+        let connected;
+        if(this.state.tasks.length < 1){
+           connected = <h1>Backend spinning up....please wait a few seconds</h1>;
+        }
+        
+        
         return(
             <div className="Page">
                 <header className="Page-header"><h1>Tasks</h1></header>
+                <div>
+                {connected}
+                </div>
                 <body className="Page-body">
                 <div className="heading"><h3>To-Do</h3></div>
                     <table className="table">
