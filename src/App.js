@@ -11,10 +11,9 @@ function App() {
   return (
     
     <BrowserRouter> 
-    <Redirect from='/' to='/Home' />
     <NavBar />
       <Switch>
-        <Route path ="/Home">
+        <Route path ="/">
          <TasksList />
         </Route>
         <Route path ="/NewTask">
