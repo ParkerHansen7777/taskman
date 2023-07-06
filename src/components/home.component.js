@@ -7,6 +7,7 @@ export default class Home extends Component {
         return(
             <div className="landing" >
                 <h1>Soon to be Task Manager Application.</h1>
+                <footer className="Page-footer"><span>Created by Me (© 2023)</span></footer>
             </div>
         );
     }

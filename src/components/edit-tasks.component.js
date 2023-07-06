@@ -113,6 +113,7 @@ export default class EditTasks extends Component {
                     <input type="submit" value="Edit Task" className="btn btn-primary" />
                 </div>
             </form>
+            <footer className="Page-footer"><span>Created by Me (© 2023)</span></footer>
         </div>
         )
     }

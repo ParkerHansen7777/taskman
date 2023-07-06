@@ -93,6 +93,7 @@ constructor(props) {
                         <input type="submit" value="Create Task" className="btn btn-primary" />
                     </div>
                 </form>
+                <footer className="Page-footer"><span>Created by Me (© 2023)</span></footer>
             </div>
         )
     }
