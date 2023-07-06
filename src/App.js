@@ -11,13 +11,12 @@ function App() {
   return (
     
     <BrowserRouter> 
-    <Redirect from='/' to='/Home' />
     <NavBar />
       <Switch>
-        <Route path ="/Home">
+        <Route exact path ="/">
          <TasksList />
         </Route>
-        <Route path ="/NewTask">
+        <Route exact path ="/NewTask">
           <NewTask />
         </Route>
 		<Route path ='/edit/:id' component={EditTasks}/>
