@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './components/navbar.component';
 //import CreateUsers from './components/create-user.component';
 import NewTask from './components/new-task.component';
