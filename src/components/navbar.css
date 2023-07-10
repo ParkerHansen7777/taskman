@@ -1,6 +1,6 @@
 
 #navbar {
-	position: static;
+	position: relative;
 	width: 100%;
 	float: left;
 	text-align: center;

@@ -55,7 +55,7 @@ constructor(props) {
     
     render(){
         return(
-            <div className="page">
+            <div className="Page-body">
                 <h3>Create New Task</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
@@ -90,7 +90,7 @@ constructor(props) {
                         </select>
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Create Task" className="btn btn-primary" />
+                        <input type="submit" value="Add Task" className="btn btn-primary" />
                     </div>
                 </form>
                 <footer className="Page-footer"><span>Created by Me (© 2023)</span></footer>

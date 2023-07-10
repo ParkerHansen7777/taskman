@@ -76,7 +76,7 @@ export default class EditTasks extends Component {
 
     render(){
         return(
-        <div className="page">
+        <div className="Page">
             <h3>Edit Game Log</h3>
             <form onSubmit={this.onSubmit}>
                 <div className="form-group">
