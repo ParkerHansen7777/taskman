@@ -55,7 +55,8 @@ constructor(props) {
     
     render(){
         return(
-            <div className="Page-body">
+            <div className="flex-box-vert">
+                <div className="container">
                 <h3>Create New Task</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
@@ -93,7 +94,7 @@ constructor(props) {
                         <input type="submit" value="Add Task" className="btn btn-primary" />
                     </div>
                 </form>
-                <footer className="Page-footer"><span>Created by Me (© 2023)</span></footer>
+                </div>
             </div>
         )
     }

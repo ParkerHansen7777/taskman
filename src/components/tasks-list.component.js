@@ -10,7 +10,7 @@ const Task = props => (
         <td>{props.task.description}</td>
         <td>{props.task.status}</td>
         <td>
-        <Link className="edit_link" to={"/edit/"+props.task._id}>edit</Link> | <button className="button-del" onClick={() => { props.deleteTask(props.task._id) }}>delete</button>
+        <button className="edit_button"><Link  className="edit_link" to={"/edit/"+props.task._id}>edit</Link></button> | <button className="button-del" onClick={() => { props.deleteTask(props.task._id) }}>delete</button>
         </td>  
     </tr>
 )
@@ -70,69 +70,70 @@ export default class TasksList extends Component {
         
         let connected;
         if(this.state.tasks.length < 1){
-           connected = <h1>Backend spinning up....please wait a few seconds</h1>;
+           connected = <h2>Backend spinning up....please wait a few seconds</h2>;
         }
         
         
         return(
             <div className="Page">
-                <header className="Page-header"><h1>Task List</h1></header>
-                <div>
-                {connected}
-                </div>
+                <header className="Page-header"><h1>Task List</h1> {connected} </header>
                 <div className="Page-body">
-                    <div className="about-text">
-                        <p>Tasks are seperated into tables based on their status "To-Do, Doing, or Done." <br />
-                        You can create a task by using the create task button in the nav bar. </p>
+                    <div className="flex-box">
+                        <div className="about-text">
+                            <p>Tasks are seperated into tables based on their status "To-Do, Doing, or Done." <br />
+                            You can create a task by using the 'Create Task' button below. </p>
+                        </div>
+                        <div className="tables">
+                        <table className="table">
+                            <caption>To-Do</caption>
+                            <thead className="thead">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody className="tbody">
+                                { this.taskList1() }
+                            </tbody>
+                        </table>
+                        <table className="table">
+                        <caption>Doing</caption>
+                            <thead className="thead">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody className="tbody">
+                                { this.taskList2() }
+                            </tbody>
+                        </table>
+                        <table className="table">
+                        <caption>Done</caption>
+                            <thead className="thead">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody className="tbody">
+                                { this.taskList3() }
+                            </tbody>
+                        </table>
+                        </div>
                     </div>
-                    <div className="tables">
-                    <table className="table">
-                        <caption>To-Do</caption>
-                        <thead className="thead">
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody className="tbody">
-                            { this.taskList1() }
-                        </tbody>
-                    </table>
-                    <table className="table">
-                    <caption>Doing</caption>
-                        <thead className="thead">
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody className="tbody">
-                            { this.taskList2() }
-                        </tbody>
-                    </table>
-                    <table className="table">
-                    <caption>Done</caption>
-                        <thead className="thead">
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody className="tbody">
-                            { this.taskList3() }
-                        </tbody>
-                    </table>
-                    </div>
-                    <button className="button-ct" onClick={() => this.state.creatingTask ? this.setState ({creatingTask: false}) : this.setState ({creatingTask: true}) }>Create Task</button>
-                    {this.state.creatingTask ? <NewTask /> : null}
+                        <div className="flex-box-vert">
+                            <button className="button-ct" onClick={() => this.state.creatingTask ? this.setState ({creatingTask: false}) : this.setState ({creatingTask: true}) }>Create Task</button>
+                            {this.state.creatingTask ? <NewTask /> : null}
+                        </div>
                  </div>
-                <footer className="Page-footer"><span>Created by Me (© 2023)</span></footer>
+                <footer className="Page-footer"><span>Created by Parker (© 2023)</span></footer>
             </div>
         )
     }
