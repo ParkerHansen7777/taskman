@@ -76,7 +76,7 @@ export default class TasksList extends Component {
         
         return(
             <div className="Page">
-                <header className="Page-header"><h1>Task List</h1> {connected} </header>
+                <header className="Page-header"><h1>Task Organizer</h1> {connected} </header>
                 <div className="Page-body">
                     <div className="flex-box">
                         <div className="about-text">
