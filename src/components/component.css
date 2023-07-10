@@ -1,34 +1,98 @@
 .Page{
-	margin:auto;
+	margin: auto;
     padding: .5em;
-	background-color: rgb(195, 195, 201);
+	background-color: rgb(131, 74, 206);
+    height: 100vh;
+    
 }
 
 
+.Page-header{
+    margin: auto;
+    text-align: center;
+    display: inline;
+    justify-content: center;
+
+}
 
 .Page-body{
-    background: rgb(195, 195, 201);
-}
-.table{
-    
-    /*float: left;*/
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    justify-content: center;
-    padding: 5px;
-	border: 2px solid black;
-    background-color: lavender;
+    margin: auto;
+    width: 90%;
 }
 
-.heading{
-    position: relative;
-    text-align: center;
-    justify-content: center;
+.flex-box{
+   
+   padding: 2%;
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;   
+
+}
+ .flex-box-vert{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 2%;
+ }
+
+ .container{
+    padding: .5em;
+    background-color: white;
+    border: 2px solid black;
+ }
+
+.about-text{
+    background-color: white;
+    border: 2px solid black;
+}
+
+.about-text > p{
+    padding: 5px;
+    font-size: large;
+    width: 95%;
+}
+
+.edit_button{
+    color: black;
+    background-color:orange;
+    
+}
+
+.edit_link{
+    text-decoration: none;
+    color: white;
+}
+
+.button-del{
+    border: 2px solid rgb(0, 0, 0);
+    color: white;
+    background-color: red;
+    font-family: inherit;
+    padding: auto;
+}
+
+.button-ct{
+    width: 15%;
+    color: white;
+    background-color: green;
+    border: 2px solid rgb(0, 0, 0);
+}
+.tables{
+    margin: auto;
+    padding: 1%;
+    border: 2px solid rgb(0, 0, 0);
+    width: 50%;
+    display: inline-block;
+    background-color: white;
+}
+.table{
+    margin: auto;
+    background-color: lavender;
+    width: 75%;
 }
 
 .thead{
-
+    
     background-color: rgb(160, 160, 160);
 	position: relative;
     text-align: center;
@@ -49,8 +113,9 @@
     
 }
 
+
 .Page-footer {
-	background: #DDE0E3;
+	background: #878787;
     padding: 15px 10px;
     position: fixed; 
     left: 0;
