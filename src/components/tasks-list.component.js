@@ -80,7 +80,7 @@ export default class TasksList extends Component {
                 <div className="Page-body">
                     <div className="flex-box">
                         <div className="about-text">
-                            <p>Tasks are seperated into tables based on their status "To-Do, Doing, or Done." <br />
+                            <p>Tasks are seperated into tables based on their status 'To-Do', 'Doing', or 'Done'. <br />
                             You can create a task by using the 'Create Task' button below. </p>
                         </div>
                         <div className="tables">
