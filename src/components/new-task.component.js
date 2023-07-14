@@ -46,7 +46,7 @@ constructor(props) {
 
         console.log(task);
 
-        axios.post('http://localhost:5000/tasks/add', task)
+        axios.post('https://taskmanager-backend-1st0.onrender.com/tasks/add', task)
             .then(res => console.log(res.data));
        
 	   window.location = '/';

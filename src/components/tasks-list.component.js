@@ -26,7 +26,7 @@ export default class TasksList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/tasks/')
+        axios.get('https://taskmanager-backend-1st0.onrender.com/tasks/')
             .then(response => {
                 this.setState({ tasks: response.data })
             })
@@ -36,7 +36,7 @@ export default class TasksList extends Component {
     }
 
     deleteTask(id) {
-        axios.delete('http://localhost:5000/tasks/'+id)
+        axios.delete('https://taskmanager-backend-1st0.onrender.com/tasks/'+id)
             .then(res => console.log(res.data));
 
         this.setState({

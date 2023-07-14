@@ -28,7 +28,7 @@ export default class CreateUsers extends Component {
 
         console.log(user);
 
-        axios.post('http://localhost:5000/users/add', user)
+        axios.post('https://taskmanager-backend-1st0.onrender.com/users/add', user)
             .then(res => console.log(res.data));
         this.setState({
             username: ''
