@@ -31,7 +31,7 @@ export default class EditTasks extends Component {
           })
     
      
-      }
+    }
     
     
     onChangeName(e) {

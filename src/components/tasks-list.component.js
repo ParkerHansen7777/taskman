@@ -76,11 +76,11 @@ export default class TasksList extends Component {
         
         return(
             <div className="Page">
-                <header className="Page-header"><h1>Task List</h1> {connected} </header>
+                <header className="Page-header"><h1>Task Organizer</h1> {connected} </header>
                 <div className="Page-body">
                     <div className="flex-box">
                         <div className="about-text">
-                            <p>Tasks are seperated into tables based on their status "To-Do, Doing, or Done." <br />
+                            <p>Tasks are seperated into tables based on their status 'To-Do', 'Doing', or 'Done'. <br />
                             You can create a task by using the 'Create Task' button below. </p>
                         </div>
                         <div className="tables">
