@@ -18,7 +18,7 @@ export default class EditTasks extends Component {
     }
     
     componentDidMount() {
-        axios.get('http://localhost:5000/tasks/'+this.props.match.params.id)
+        axios.get('https://taskmanager-backend-1st0.onrender.com/tasks/'+this.props.match.params.id)
           .then(response => {
             this.setState({
               name: response.data.name,
@@ -31,7 +31,7 @@ export default class EditTasks extends Component {
           })
     
      
-      }
+    }
     
     
     onChangeName(e) {
@@ -65,54 +65,59 @@ export default class EditTasks extends Component {
 
         console.log(task);
 
-        axios.post('http://localhost:5000/tasks/update/'+this.props.match.params.id, task)
+        axios.post('https://taskmanager-backend-1st0.onrender.com/tasks/update/'+this.props.match.params.id, task)
             .then(res => console.log(res.data));
         
     
 
-        window.location = '/';
+        //window.location = '/';
     }
 
 
     render(){
         return(
-        <div className="page">
-            <h3>Edit Game Log</h3>
-            <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                    <label>Task: </label>
-                    <input type="text"
-                        required
-                        className="form-control"
-                        value={this.state.name}
-                        onChange={this.onChangeName}
-                        />
+        <div className="Page">
+            <div className="flex-box-vert">
+            <div className="container">
+                <h3>Edit Task</h3>
+                <form onSubmit={this.onSubmit}>
+                    <div className="form-group">
+                        <label>Task: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.name}
+                            onChange={this.onChangeName}
+                            />
+                    </div>
+                    <div className="form-group">
+                        <label>Description: </label>
+                        <input type="text"
+                            required
+                            className="form-control"
+                            value={this.state.description}
+                            onChange={this.onChangeDesc}
+                            />
+                    </div>
+                    <div className="form-group">
+                        <label>Status: </label>
+                        <select ref="userInput"
+                            required
+                            className="form-control"
+                            value={this.state.status}
+                            onChange={this.onChangeStatus}>
+                            <option>To-Do</option>
+                            <option>Doing</option>
+                            <option>Done</option>
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <input type="submit" value="Submit Changes" className="btn btn-primary" />
+                    </div>
+                </form>
                 </div>
-                <div className="form-group">
-                    <label>Description: </label>
-                    <input type="text"
-                        required
-                        className="form-control"
-                        value={this.state.description}
-                        onChange={this.onChangeDesc}
-                        />
-                </div>
-                <div className="form-group">
-                    <label>Status: </label>
-                    <select ref="userInput"
-                        required
-                        className="form-control"
-                        value={this.state.status}
-                        onChange={this.onChangeStatus}>
-                        <option>To-Do</option>
-                        <option>Doing</option>
-                        <option>Done</option>
-                    </select>
-                </div>
-                <div className="form-group">
-                    <input type="submit" value="Edit Task" className="btn btn-primary" />
-                </div>
-            </form>
+            </div>
+            <footer className="Page-footer"><span>Created by Me (© 2023)</span></footer>
         </div>
         )
     }

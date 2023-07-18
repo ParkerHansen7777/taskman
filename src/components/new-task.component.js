@@ -46,7 +46,7 @@ constructor(props) {
 
         console.log(task);
 
-        axios.post('http://localhost:5000/tasks/add', task)
+        axios.post('https://taskmanager-backend-1st0.onrender.com/tasks/add', task)
             .then(res => console.log(res.data));
        
 	   window.location = '/';
@@ -55,7 +55,8 @@ constructor(props) {
     
     render(){
         return(
-            <div className="page">
+            <div className="flex-box-vert">
+                <div className="container">
                 <h3>Create New Task</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
@@ -90,9 +91,10 @@ constructor(props) {
                         </select>
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Create Task" className="btn btn-primary" />
+                        <input type="submit" value="Add Task" className="btn btn-primary" />
                     </div>
                 </form>
+                </div>
             </div>
         )
     }
