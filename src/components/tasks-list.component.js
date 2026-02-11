@@ -26,7 +26,7 @@ export default class TasksList extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://taskmanager-backend-1st0.onrender.com/tasks/')
+        axios.get('http://localhost:5000/tasks/')
             .then(response => {
                 this.setState({ tasks: response.data })
             })
@@ -35,13 +35,20 @@ export default class TasksList extends Component {
             })
     }
 
-    deleteTask(id) {
-        axios.delete('https://taskmanager-backend-1st0.onrender.com/tasks/'+id)
-            .then(res => console.log(res.data));
-
+    addTask = (task) => {
         this.setState({
-            tasks: this.state.tasks.filter(el => el._id !== id)
+            tasks: [...this.state.tasks, task],
+            creatingTask: false
         })
+    }
+    
+    deleteTask(id) {
+        axios.delete('http://localhost:5000/tasks/'+id)
+            .then(() => {
+                this.setState(prev => ({
+                    tasks: prev.tasks.filter(t => t._id !== id)
+                }));
+            });
     }   
     
     taskList1() {
@@ -130,7 +137,9 @@ export default class TasksList extends Component {
                     </div>
                         <div className="flex-box-vert">
                             <button className="button-ct" onClick={() => this.state.creatingTask ? this.setState ({creatingTask: false}) : this.setState ({creatingTask: true}) }>Create Task</button>
-                            {this.state.creatingTask ? <NewTask /> : null}
+                            {this.state.creatingTask ? 
+                                <NewTask onTaskCreated={this.addTaskToState} /> 
+                                : null}
                         </div>
                  </div>
                 <footer className="Page-footer"><span>Created by Parker (© 2023)</span></footer>
