@@ -19,7 +19,7 @@ export default class EditTasks extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/tasks/' + this.props.match.params.id)
+      .get('https://taskmanager-backend-1st0.onrender.com/tasks/' + this.props.match.params.id)
       .then(response => {
         this.setState({
           name: response.data.name,
@@ -53,7 +53,7 @@ export default class EditTasks extends Component {
 
     axios
       .post(
-        'http://localhost:5000/tasks/update/' +
+        'https://taskmanager-backend-1st0.onrender.com/tasks/update/' +
           this.props.match.params.id,
         task
       )
