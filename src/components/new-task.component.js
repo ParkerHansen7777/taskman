@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import "./component.css";
+import axios from 'axios';
 export default class NewTask extends Component {
 constructor(props) {
         super(props);
@@ -62,8 +61,8 @@ constructor(props) {
                 <h3>Create New Task</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Task Name: </label>
-                        <input type="text"
+                        <label>Name: </label>
+                        <input
                             required
                             className="form-control"
                             value={this.state.name}
@@ -71,8 +70,8 @@ constructor(props) {
                             />
                     </div>
 					<div className="form-group">
-                        <label>Task Description: </label>
-                        <input type="text"
+                        <label>Description: </label>
+                        <input
                             required
                             className="form-control"
                             value={this.state.description}
@@ -80,7 +79,7 @@ constructor(props) {
                             />
                     </div>
                     <div className="form-group">
-                        <label>Task Status: </label>
+                        <label>Status: </label>
                         <select ref="userInput"
                             required
                             className="form-control"
