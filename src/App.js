@@ -4,7 +4,8 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 //import NavBar from './components/navbar.component';
 import NewTask from './components/new-task.component';
 import TasksList from './components/tasks-list.component';
-import EditTasks from './components/edit-tasks.component'
+import EditTasks from './components/edit-tasks.component';
+import PageNotFound from "./components/pageNotFound.component";
 function App() {
   return (
     
@@ -17,6 +18,7 @@ function App() {
           <NewTask />
         </Route>
 		<Route path ='/edit/:id' component={EditTasks}/>
+    <Route path="*" exact component={PageNotFound} />
 		</Switch>
   </BrowserRouter> 
   );
